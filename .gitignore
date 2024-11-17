@@ -1,18 +1,68 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wize</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #030303;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"], input[type="button"] {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .response {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
 
-# Other files and folders
-.settings/
+    <div class="container">
+        <h1>wize</h1>
+        <p>Digite seu nome:</p>
+        <input type="text" id="nameInput" placeholder="Seu nome">
+        <input type="button" value="enviar" onclick="saudarUsuario()">
+        <p id="response" class="response"></p>
+    </div>
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+    <script>
+        function saudarUsuario() {
+            // Pega o nome digitado
+            var nome = document.getElementById('nameInput').value;
+            
+            // Verifica se o campo está vazio
+            if (nome.trim() === "") {
+                document.getElementById('response').innerHTML = "Por favor, digite seu nome.";
+            } else {
+                // Exibe uma saudação personalizada
+                document.getElementById('response').innerHTML = "Olá, " + nome + "! Seja bem-vindo ao meu site, agora todos os seus dados estão sendo puxados pelo meu sistema, obrigada queridx!!";
+            }
+        }
+    </script>
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+</body>
+</html>
